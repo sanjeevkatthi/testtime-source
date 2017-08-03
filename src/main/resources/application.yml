@@ -1,0 +1,22 @@
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: guest
+
+  profiles:
+    active: cloud
+---
+spring:
+  profiles: cloud
+  
+#  redis:
+#    host: 52.168.88.169
+#    port: 6379
+#
+#  rabbitmq:
+#    host: 52.168.17.42
+#    port: 15672
+#    username: radmin
+#    password: password
+    

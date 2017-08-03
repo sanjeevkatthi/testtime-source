@@ -1,0 +1,18 @@
+---
+applications:
+  - name: sourceapp
+    path: target/time-source-0.0.1-SNAPSHOT.jar
+    memory: 1G
+    env:
+      JAVA_OPTS: -Djava.security.egd=file:/dev/./urandom
+      SPRING_PROFILES_ACTIVE: cloud
+    services:
+      - redis
+      - rabbitmq
+      
+
+buildpack: https://github.com/cloudfoundry/java-buildpack.git
+      
+env:
+    JBP_CONFIG_SPRING_AUTO_RECONFIGURATION: '{enabled: false}'
+
